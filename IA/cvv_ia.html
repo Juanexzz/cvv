@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Esteban - Hoja de Vida</title>
+<style>
+  :root {
+    --color-bg: #EEF1F4;
+    --color-surface: #FFFFFF;
+    --color-text: #1C222B;
+    --color-muted: #5B6472;
+    --color-accent: #1F6F5C;
+    --color-border: #E1E5EA;
+    --radius: 10px;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 40px 16px;
+  }
+
+  .cv {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 48px;
+  }
+
+  .cv-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 32px;
+  }
+
+  .cv-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-accent);
+    flex-shrink: 0;
+    background: var(--color-bg);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-accent);
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+
+  .cv-heading h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .role {
+    color: var(--color-muted);
+    font-size: 15px;
+  }
+
+  .cv-section {
+    margin-bottom: 32px;
+  }
+
+  .cv-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .cv-section h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .cv-section p {
+    color: var(--color-text);
+  }
+
+  .muted {
+    color: var(--color-muted);
+  }
+
+  .cv-section ul {
+    list-style: none;
+  }
+
+  .cv-section li {
+    margin-bottom: 14px;
+  }
+
+  .cv-section li:last-child {
+    margin-bottom: 0;
+  }
+
+  .item-title {
+    font-weight: 600;
+  }
+
+  .item-sub {
+    color: var(--color-muted);
+    font-size: 14px;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .plain-list li {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .plain-list .label {
+    font-weight: 600;
+    min-width: 65px;
+    color: var(--color-muted);
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  a:hover,
+  a:focus {
+    border-bottom-color: var(--color-accent);
+  }
+
+  @media (max-width: 560px) {
+    .cv {
+      padding: 28px 20px;
+    }
+    .cv-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+    }
+    .cv {
+      border: none;
+      padding: 0;
+      max-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="cv">
+
+    <header class="cv-header">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8J2aAXW6O7GbOxVuMxwIMC2lNCeHS914C8Rx4DM42A&s=10" alt="Foto de perfil" class="profile-img">
+      <div class="cv-heading">
+        <p class="eyebrow">// hoja de vida</p>
+        <h1>Juan Esteban</h1>
+        <p class="role">Estudiante de Desarrollo de Software</p>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="cv-section">
+        <p class="eyebrow">// perfil</p>
+        <h2>Perfil</h2>
+        <p>Desarrollador apasionado por el diseño y creación de aplicaciones web modernas, funcionales e interactivas. Con capacidad de aprendizaje rápido, trabajo en equipo y resolución eficiente de problemas técnicos.</p>
+      </section>
+
+      <section class="cv-section">
+        <p class="eyebrow">// experiencia laboral</p>
+        <h2>Experiencia Laboral</h2>
+        <p class="muted">Aún sin experiencia laboral formal. Actualmente enfocado en el desarrollo de proyectos académicos y personales.</p>
+      </section>
+
+      <section class="cv-section">
+        <p class="eyebrow">// educación</p>
+        <h2>Educación</h2>
+        <ul>
+          <li>
+            <div class="item-title">Media Técnica en Desarrollo de Software</div>
+            <div class="item-sub">Universidad de Medellín · 2023 - Presente</div>
+          </li>
+          <li>
+            <div class="item-title">Bachiller Académico</div>
+            <div class="item-sub">INEM José Félix de Restrepo</div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="cv-section">
+        <p class="eyebrow">// certificaciones</p>
+        <h2>Certificaciones</h2>
+        <ul>
+          <li>
+            <div class="item-title">AWS Certified Solutions Architect – Associate</div>
+            <div class="item-sub">Amazon Web Services (AWS)</div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="cv-section two-col">
+        <div>
+          <p class="eyebrow">// contacto</p>
+          <h2>Contacto</h2>
+          <ul class="plain-list">
+            <li><span class="label">Correo</span><a href="mailto:juanvallejo240@gmail.com">juanvallejo240@gmail.com</a></li>
+            <li><span class="label">Celular</span><a href="tel:+573195616699">+57 319 561 6699</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="eyebrow">// redes sociales</p>
+          <h2>Redes Sociales</h2>
+          <ul class="plain-list">
+            <li><span class="label">GitHub</span><a href="https://github.com/Juanexzz" target="_blank" rel="noopener">github.com/Juanexzz</a></li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
