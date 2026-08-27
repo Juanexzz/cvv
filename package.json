@@ -1,0 +1,26 @@
+{
+  "name": "taller-typescript-cvv",
+  "version": "1.0.0",
+  "description": "Taller de ejercicios prácticos con TypeScript y JavaScript - Juan Esteban Vallejo",
+  "main": "ejercicios.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ejercicios.js",
+    "dev": "ts-node ejercicios.ts"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "arrays",
+    "objects",
+    "exercises",
+    "taller"
+  ],
+  "author": "Juan Esteban Vallejo <juanvallejo240@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}
