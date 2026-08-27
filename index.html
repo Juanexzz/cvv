@@ -3,56 +3,364 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoja de Vida</title>
+  <meta name="description" content="Sitio web personal y portafolio de Juan Esteban Vallejo - Desarrollador de Software.">
+  <meta name="author" content="Juan Esteban Vallejo">
+  <title>Juan Esteban Vallejo | Sitio Web Personal & Portafolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="cv-container">
-    <header>
-      <img src="perfil.png" alt="Foto de perfil" class="profile-img">
-      <div class="header-info">
-        <h1>Juan Esteban</h1>
-        <div class="contact-info">
-          <p><strong>Correo:</strong> <em>juan@ejemplo.com</em></p>
-          <p><strong>Celular:</strong> <em>+57 300 123 4567</em></p>
+
+  <!-- Encabezado y Navegación Principal -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#inicio" class="logo">
+        <span class="logo-accent">&lt;</span>JuanEsteban<span class="logo-accent">/&gt;</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li class="nav-item"><a href="#acerca-de" class="nav-link">Acerca de</a></li>
+          <li class="nav-item"><a href="#hobbies" class="nav-link">Pasiones & Hobbies</a></li>
+          <li class="nav-item"><a href="#proyectos" class="nav-link">Portafolio</a></li>
+          <li class="nav-item"><a href="#contacto" class="nav-link nav-btn">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main>
+
+    <!-- Sección 1: Inicio / Hero -->
+    <section id="inicio" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge">Disponible para nuevos proyectos</div>
+          <h1 class="hero-title">¡Hola! Soy <span class="highlight">Juan Esteban Vallejo</span></h1>
+          <p class="hero-subtitle">Desarrollador de Software & Apasionado por la Tecnología Web</p>
+          <p class="hero-description">
+            Especializado en la creación de experiencias web modernas, código limpio y soluciones digitales funcionales. Me encanta aprender constantemente y transformar ideas en productos reales.
+          </p>
+          <div class="hero-actions">
+            <a href="#proyectos" class="btn btn-primary">Ver Portafolio</a>
+            <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/Juanexzz" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:juanvallejo240@gmail.com" class="social-link" aria-label="Correo electrónico">
+              <span>juanvallejo240@gmail.com</span>
+            </a>
+          </div>
         </div>
-        <div class="social-links">
-          <a href="https://github.com/Juanexzz" target="_blank">GitHub</a>
-          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <figure class="hero-figure">
+          <img src="perfil.png" alt="Fotografía de Juan Esteban Vallejo" class="hero-image">
+          <figcaption class="hero-caption">Juan Esteban Vallejo &bull; Desarrollador</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Sección 2: Acerca de -->
+    <section id="acerca-de" class="about-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Acerca de Mí</h2>
+          <p class="section-subtitle">Conoce más sobre mi trayectoria, formación y habilidades</p>
+        </header>
+
+        <div class="about-grid">
+          <!-- Biografía y Perfil -->
+          <article class="about-card bio-card">
+            <h3>Perfil Profesional</h3>
+            <p>
+              Soy un desarrollador enfocado en el desarrollo web moderno, arquitectura de software limpia y soluciones eficientes. Cuento con formación técnica y experiencia práctica en el diseño e implementación de interfaces interactivas y sistemas web adaptativos.
+            </p>
+            <p>
+              Me distingo por una gran capacidad de aprendizaje autodidacta, resolución lógica de problemas, atención al detalle y un fuerte compromiso con las buenas prácticas de ingeniería.
+            </p>
+          </article>
+
+          <!-- Formación y Certificaciones -->
+          <article class="about-card education-card">
+            <h3>Educación & Formación</h3>
+            <ul class="timeline-list">
+              <li class="timeline-item">
+                <span class="timeline-date">2022 - Presente</span>
+                <strong class="timeline-title">Tecnología en Desarrollo de Software</strong>
+                <span class="timeline-place">Institución Universitaria</span>
+                <p class="timeline-desc">Especialización en desarrollo web, estructuras de datos y bases de datos.</p>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-date">2021</span>
+                <strong class="timeline-title">Bachiller Académico</strong>
+                <span class="timeline-place">Colegio Integrado</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Habilidades Técnicas -->
+        <div class="skills-block">
+          <h3 class="skills-heading">Habilidades y Tecnologías</h3>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h4>Frontend</h4>
+              <ul class="skill-tags">
+                <li class="skill-tag">HTML5 Semántico</li>
+                <li class="skill-tag">CSS3 (Grid & Flexbox)</li>
+                <li class="skill-tag">JavaScript (ES6+)</li>
+                <li class="skill-tag">Responsive Design</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Herramientas & Métodos</h4>
+              <ul class="skill-tags">
+                <li class="skill-tag">Git & GitHub</li>
+                <li class="skill-tag">Visual Studio Code</li>
+                <li class="skill-tag">Control de Versiones</li>
+                <li class="skill-tag">Clean Code</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Habilidades Blandas</h4>
+              <ul class="skill-tags">
+                <li class="skill-tag">Trabajo en Equipo</li>
+                <li class="skill-tag">Comunicación Asertiva</li>
+                <li class="skill-tag">Resolución de Problemas</li>
+                <li class="skill-tag">Autonomía</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section>
-        <h2>Perfil</h2>
-        <p>Desarrollador apasionado por el diseño y creación de aplicaciones web modernas, funcionales e interactivas. Con capacidad de aprendizaje rápido, trabajo en equipo y resolución eficiente de problemas técnicos.</p>
-      </section>
+    <!-- Sección 3: Hobbies & Intereses Personales -->
+    <section id="hobbies" class="hobbies-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Pasiones & Hobbies</h2>
+          <p class="section-subtitle">Lo que me inspira y disfruto fuera del código</p>
+        </header>
 
-      <section>
-        <h2>Experiencia Laboral</h2>
-        <ul>
-          <li><strong>Desarrollador Web Freelance</strong> (2023 - Presente) - Creación e implementación de aplicaciones web adaptativas.</li>
-          <li><strong>Asistente de Soporte Técnico</strong> (2022 - 2023) - Mantenimiento preventivo y solución de problemas informáticos.</li>
+        <div class="hobbies-grid">
+          <article class="hobby-card">
+            <div class="hobby-icon">&#128187;</div>
+            <h3 class="hobby-title">Desarrollo Open Source</h3>
+            <p class="hobby-desc">
+              Me encanta explorar nuevas tecnologías, contribuir a proyectos comunitarios y experimentar con arquitecturas web eficientes.
+            </p>
+          </article>
+
+          <article class="hobby-card">
+            <div class="hobby-icon">&#128218;</div>
+            <h3 class="hobby-title">Lectura y Aprendizaje Continuo</h3>
+            <p class="hobby-desc">
+              Lectura constante sobre arquitectura de software, productividad, diseño de interfaces y avances en inteligencia artificial.
+            </p>
+          </article>
+
+          <article class="hobby-card">
+            <div class="hobby-icon">&#127918;</div>
+            <h3 class="hobby-title">Videojuegos de Estrategia</h3>
+            <p class="hobby-desc">
+              Aficionado a juegos que fomentan el pensamiento estratégico, la resolución de puzzles y la toma rápida de decisiones.
+            </p>
+          </article>
+
+          <article class="hobby-card">
+            <div class="hobby-icon">&#127911;</div>
+            <h3 class="hobby-title">Música & Creatividad</h3>
+            <p class="hobby-desc">
+              La música es mi principal aliada durante largas sesiones de programación, potenciando el enfoque y la creatividad.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 4: Portafolio / Proyectos -->
+    <section id="proyectos" class="projects-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Portafolio de Proyectos</h2>
+          <p class="section-subtitle">Algunos de los trabajos y proyectos que he desarrollado</p>
+        </header>
+
+        <div class="projects-grid">
+          <!-- Proyecto 1 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-badge">Web Semántica</span>
+              <h3 class="project-title">Sitio Web Personal & CV</h3>
+            </div>
+            <p class="project-desc">
+              Sitio web personal desarrollado desde cero aplicando HTML5 semántico puro, CSS moderno con variables personalizadas y diseño 100% responsivo sin frameworks.
+            </p>
+            <div class="project-techs">
+              <span class="tech-item">HTML5</span>
+              <span class="tech-item">CSS3</span>
+              <span class="tech-item">Responsive</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Juanexzz/cvv" target="_blank" rel="noopener noreferrer" class="project-link">Ver Código en GitHub &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Proyecto 2 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-badge">Frontend</span>
+              <h3 class="project-title">Presentaciones Interactivas Web</h3>
+            </div>
+            <p class="project-desc">
+              Módulo de diapositivas interactivas en HTML y CSS para presentaciones técnicas y divulgación de conceptos de programación orientada a aspectos y arquitectura.
+            </p>
+            <div class="project-techs">
+              <span class="tech-item">HTML5</span>
+              <span class="tech-item">CSS Grid</span>
+              <span class="tech-item">Presentaciones</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Juanexzz" target="_blank" rel="noopener noreferrer" class="project-link">Explorar Repositorio &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Proyecto 3 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-badge">Aplicación Web</span>
+              <h3 class="project-title">Dashboard & Herramientas Web</h3>
+            </div>
+            <p class="project-desc">
+              Interfaces modulares y paneles de administración construidos con componentes reutilizables, enfoque mobile-first y accesibilidad web.
+            </p>
+            <div class="project-techs">
+              <span class="tech-item">JavaScript</span>
+              <span class="tech-item">CSS Flexbox</span>
+              <span class="tech-item">UI/UX</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Juanexzz" target="_blank" rel="noopener noreferrer" class="project-link">Ver Proyecto &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 5: Contacto -->
+    <section id="contacto" class="contact-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Contacto</h2>
+          <p class="section-subtitle">¿Tienes una propuesta o quieres colaborar? Escríbeme</p>
+        </header>
+
+        <div class="contact-layout">
+          <!-- Información de Contacto Directo -->
+          <aside class="contact-info-panel">
+            <h3>Información de Contacto</h3>
+            <p>Ponte en contacto conmigo a través de cualquiera de los siguientes canales directos:</p>
+
+            <div class="contact-channels">
+              <div class="contact-item">
+                <div class="contact-icon">&#9993;</div>
+                <div class="contact-detail">
+                  <span class="contact-label">Correo Electrónico:</span>
+                  <a href="mailto:juanvallejo240@gmail.com" class="contact-value">juanvallejo240@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">&#128222;</div>
+                <div class="contact-detail">
+                  <span class="contact-label">Celular / WhatsApp:</span>
+                  <a href="tel:+573001234567" class="contact-value">+57 300 123 4567</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">&#128205;</div>
+                <div class="contact-detail">
+                  <span class="contact-label">Ubicación:</span>
+                  <span class="contact-value">Colombia</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">&#128279;</div>
+                <div class="contact-detail">
+                  <span class="contact-label">Perfiles:</span>
+                  <div class="contact-social-pills">
+                    <a href="https://github.com/Juanexzz" target="_blank" rel="noopener noreferrer" class="pill">GitHub (@Juanexzz)</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="pill">LinkedIn</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Formulario de Contacto Semántico -->
+          <div class="contact-form-panel">
+            <h3>Envíame un Mensaje</h3>
+            <form action="mailto:juanvallejo240@gmail.com" method="POST" enctype="text/plain" class="contact-form">
+              <div class="form-group">
+                <label for="nombre" class="form-label">Nombre Completo *</label>
+                <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre" required>
+              </div>
+
+              <div class="form-group">
+                <label for="correo" class="form-label">Correo Electrónico *</label>
+                <input type="email" id="correo" name="correo" class="form-input" placeholder="tu.correo@ejemplo.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="asunto" class="form-label">Asunto *</label>
+                <input type="text" id="asunto" name="asunto" class="form-input" placeholder="Asunto del mensaje" required>
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje" class="form-label">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" rows="5" class="form-textarea" placeholder="Escribe tu mensaje aquí..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">Enviar Mensaje</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de Página Semántico -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">&lt;JuanEsteban/&gt;</span>
+        <p class="footer-tagline">Desarrollo web limpio, moderno y accesible.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegación de pie de página">
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#acerca-de">Acerca de</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#proyectos">Portafolio</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
-      </section>
+      </nav>
 
-      <section>
-        <h2>Educación</h2>
-        <ul>
-          <li><strong>Tecnología en Desarrollo de Software</strong> - Institución Universitaria (2022 - Presente)</li>
-          <li><strong>Bachiller Académico</strong> - Colegio Integrado (2021)</li>
-        </ul>
-      </section>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Juan Esteban Vallejo. Todos los derechos reservados.</p>
+        <p class="footer-subtext">Diseñado y desarrollado con HTML5 &amp; CSS3 puro (sin frameworks ni plantillas).</p>
+      </div>
+    </div>
+  </footer>
 
-      <section>
-        <h2>Certificaciones</h2>
-        <ul>
-          <li><strong>Desarrollo Web Frontend (HTML, CSS, JS)</strong> - Plataforma Online (2023)</li>
-          <li><strong>Control de Versiones con Git y GitHub</strong> - Plataforma Online (2023)</li>
-        </ul>
-      </section>
-    </main>
-  </div>
 </body>
 </html>
