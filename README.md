@@ -44,4 +44,6 @@ cvv/
 
 - **Nombre:** Juan Esteban Vallejo
 - **Correo Electrónico:** juanvallejo240@gmail.com
+- **Teléfono / WhatsApp:** [+57 319 561 6699](tel:+573195616699)
+- **LinkedIn:** [Juan Vallejo](https://www.linkedin.com/in/juan-vallejo-a7b177282/)
 - **GitHub:** [@Juanexzz](https://github.com/Juanexzz)
