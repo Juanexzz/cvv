@@ -59,6 +59,13 @@ node ejercicios.js
 
 ---
 
+## 🌐 Despliegue en Vercel
+
+El taller de ejercicios prácticos en TypeScript se encuentra desplegado y accesible a través de Vercel:  
+🔗 **[Ver Despliegue de Ejercicios TS en Vercel](https://cvv-3vekksgac-udem.vercel.app)**
+
+---
+
 ## 👤 Autor
 
 - **Nombre:** Juan Esteban Vallejo
