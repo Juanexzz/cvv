@@ -144,3 +144,55 @@ if (btnClearAll) {
 }
 
 renderDynamicList();
+
+const btnDecrement = document.getElementById('btn-decrement');
+const btnIncrement = document.getElementById('btn-increment');
+const counterDisplay = document.getElementById('counter-display');
+const counterAlert = document.getElementById('counter-alert');
+const btnResetCounter = document.getElementById('btn-reset-counter');
+
+let counterCurrentValue = 0;
+const COUNTER_LIMIT = 10;
+
+function updateCounterDisplay() {
+  counterDisplay.textContent = counterCurrentValue;
+
+  if (counterCurrentValue === COUNTER_LIMIT) {
+    counterAlert.classList.remove('hidden');
+    counterDisplay.classList.add('limit-reached');
+  } else {
+    counterAlert.classList.add('hidden');
+    counterDisplay.classList.remove('limit-reached');
+  }
+}
+
+function incrementCounter() {
+  counterCurrentValue++;
+  updateCounterDisplay();
+}
+
+function decrementCounter() {
+  if (counterCurrentValue > 0) {
+    counterCurrentValue--;
+    updateCounterDisplay();
+  }
+}
+
+function resetCounter() {
+  counterCurrentValue = 0;
+  updateCounterDisplay();
+}
+
+if (btnIncrement) {
+  btnIncrement.addEventListener('click', incrementCounter);
+}
+
+if (btnDecrement) {
+  btnDecrement.addEventListener('click', decrementCounter);
+}
+
+if (btnResetCounter) {
+  btnResetCounter.addEventListener('click', resetCounter);
+}
+
+updateCounterDisplay();
