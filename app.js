@@ -64,3 +64,83 @@ if (btnChangeColor) {
 if (btnResetColor) {
   btnResetColor.addEventListener('click', resetColorState);
 }
+
+const listForm = document.getElementById('list-form');
+const listInput = document.getElementById('list-input');
+const dynamicList = document.getElementById('dynamic-list');
+const itemsCountBadge = document.getElementById('items-count-badge');
+const btnClearAll = document.getElementById('btn-clear-all');
+
+const itemsInMemory = [];
+
+function renderDynamicList() {
+  dynamicList.innerHTML = '';
+
+  if (itemsInMemory.length === 0) {
+    const emptyState = document.createElement('li');
+    emptyState.className = 'list-empty-state';
+    emptyState.textContent = 'No hay elementos en la lista. ¡Escribe algo y presiona Agregar!';
+    dynamicList.appendChild(emptyState);
+    itemsCountBadge.textContent = 'En memoria: 0 elementos';
+    return;
+  }
+
+  itemsInMemory.forEach((itemText, index) => {
+    const li = document.createElement('li');
+    li.className = 'dynamic-item';
+
+    const textSpan = document.createElement('span');
+    textSpan.className = 'item-text';
+    textSpan.textContent = itemText;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.type = 'button';
+    deleteBtn.className = 'btn-delete-item';
+    deleteBtn.setAttribute('aria-label', `Eliminar ${itemText}`);
+    deleteBtn.textContent = '×';
+
+    deleteBtn.addEventListener('click', () => {
+      removeItemFromMemory(index);
+    });
+
+    li.appendChild(textSpan);
+    li.appendChild(deleteBtn);
+    dynamicList.appendChild(li);
+  });
+
+  itemsCountBadge.textContent = `En memoria: ${itemsInMemory.length} ${itemsInMemory.length === 1 ? 'elemento' : 'elementos'}`;
+}
+
+function addItemToMemory(text) {
+  const cleanText = text.trim();
+  if (!cleanText) return;
+  itemsInMemory.push(cleanText);
+  renderDynamicList();
+}
+
+function removeItemFromMemory(index) {
+  if (index >= 0 && index < itemsInMemory.length) {
+    itemsInMemory.splice(index, 1);
+    renderDynamicList();
+  }
+}
+
+function clearAllMemory() {
+  itemsInMemory.length = 0;
+  renderDynamicList();
+}
+
+if (listForm) {
+  listForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    addItemToMemory(listInput.value);
+    listInput.value = '';
+    listInput.focus();
+  });
+}
+
+if (btnClearAll) {
+  btnClearAll.addEventListener('click', clearAllMemory);
+}
+
+renderDynamicList();
