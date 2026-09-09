@@ -3,54 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoja de Vida</title>
-
+  <title>Arena de Retos DOM - Juan Esteban Vallejo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="cv-container">
-    <header>
-      <img src="perfil.png" alt="Foto de perfil" class="profile-img"
-     style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
-      <div class="header-info">
-        <h1>Juan Esteban</h1>
-        <div class="contact-info">
-          <p><strong>Correo:</strong> <em>juanvallejo240@gmail.com.com</em></p>
-          <p><strong>Celular:</strong> <em>+57 319 561 6699</em></p>
-        </div>
-        <div class="social-links">
-          <a href="https://github.com/Juanexzz" target="_blank">GitHub</a>
-        </div>
+  <div class="app-wrapper">
+    <header class="hero-header">
+      <div class="hero-badge">Taller Práctico de DOM</div>
+      <h1 class="hero-title">Arena de Retos DOM</h1>
+      <p class="hero-subtitle">Implementación interactiva de eventos, condicionales, arreglos en memoria y manipulación del Document Object Model en JavaScript puro.</p>
+      <div class="hero-meta">
+        <span class="meta-item"><strong>Desarrollador:</strong> Juan Esteban Vallejo</span>
+        <span class="meta-separator">•</span>
+        <span class="meta-item"><strong>Email:</strong> juanvallejo24@gmail.com</span>
       </div>
     </header>
 
-    <main>
-      <section>
-        <h2>Perfil</h2>
-        <p>Desarrollador apasionado por el diseño y creación de aplicaciones web modernas, funcionales e interactivas. Con capacidad de aprendizaje rápido, trabajo en equipo y resolución eficiente de problemas técnicos.</p>
+    <main class="main-content">
+      <section class="challenge-section">
+        <div class="section-heading">
+          <h2 class="section-title">A la arena: Retos nivel básico</h2>
+          <span class="section-tag basic">Nivel Básico</span>
+        </div>
+
+        <div class="cards-grid">
+          <article class="challenge-card" id="card-ejercicio-1">
+            <div class="card-header">
+              <span class="medal-icon">🥇</span>
+              <h3 class="card-title">Ejercicio 1 – Cambiar color</h3>
+            </div>
+            <div class="device-mockup">
+              <div class="device-speaker"></div>
+              <div class="device-screen color-screen" id="color-screen">
+                <div class="color-splash-layer" id="color-splash"></div>
+                <div class="color-content">
+                  <div class="color-indicator" id="color-indicator">#F8FAFC</div>
+                  <button type="button" class="btn-click-color" id="btn-change-color">Click</button>
+                  <div class="color-meta">
+                    <span id="color-counter">Clics: 0</span>
+                    <button type="button" class="btn-color-reset" id="btn-reset-color">Reiniciar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <p class="card-description">Crear un botón que cambie el color del fondo al hacer click.</p>
+            </footer>
+          </article>
+
+          <article class="challenge-card" id="card-ejercicio-2">
+            <div class="card-header">
+              <span class="medal-icon">🥈</span>
+              <h3 class="card-title">Ejercicio 2 – Lista dinámica</h3>
+            </div>
+            <div class="device-mockup">
+              <div class="device-speaker"></div>
+              <div class="device-screen list-screen">
+                <form class="list-form" id="list-form">
+                  <input type="text" id="list-input" class="list-input" placeholder="Enter text" autocomplete="off" required>
+                  <button type="submit" class="btn-add-item" id="btn-add-item">Agregar</button>
+                </form>
+                <div class="list-summary">
+                  <span id="items-count-badge">En memoria: 0 elementos</span>
+                  <button type="button" class="btn-clear-all" id="btn-clear-all">Limpiar</button>
+                </div>
+                <div class="list-scroll-area">
+                  <ul class="dynamic-items-list" id="dynamic-list"></ul>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <p class="card-description">Mostrar elementos en una lista interactiva. Usar un arreglo para guardar los datos de los inputs en memoria.</p>
+            </footer>
+          </article>
+        </div>
       </section>
 
-      <section>
-        <h2>Experiencia Laboral</h2>
-        <ul>
-          <li><strong>Nula por el momento</strong></li>
-        </ul>
-      </section>
+      <section class="challenge-section">
+        <div class="section-heading">
+          <h2 class="section-title">A la arena: Retos nivel pro</h2>
+          <span class="section-tag pro">Nivel Pro</span>
+        </div>
 
-      <section>
-        <h2>Educación</h2>
-        <ul>
-          <li><strong>Media  en Desarrollo de Software</strong> - Universidad de Medellin (2023 - Presente)</li>
-          <li><strong>Bachiller Académico</strong> - INEM Jose Felix de Restrepo</li>
-        </ul>
-      </section>
+        <div class="cards-grid">
+          <article class="challenge-card" id="card-ejercicio-3">
+            <div class="card-header">
+              <span class="medal-icon">🥉</span>
+              <h3 class="card-title">Ejercicio 3 – Contador con límite</h3>
+            </div>
+            <div class="device-mockup">
+              <div class="device-speaker"></div>
+              <div class="device-screen counter-screen">
+                <div class="counter-container">
+                  <div class="counter-alert hidden" id="counter-alert" role="alert">
+                    <div class="alert-icon-box">⚠️</div>
+                    <span class="alert-text">¡Límite de 10 alcanzado!</span>
+                  </div>
+                  <div class="counter-controls">
+                    <button type="button" class="btn-counter btn-decrement" id="btn-decrement" aria-label="Decrementar">−</button>
+                    <div class="counter-display" id="counter-display">0</div>
+                    <button type="button" class="btn-counter btn-increment" id="btn-increment" aria-label="Incrementar">+</button>
+                  </div>
+                  <div class="counter-actions">
+                    <button type="button" class="btn-counter-reset" id="btn-reset-counter">Restablecer contador</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <p class="card-description">Si el contador llega a 10, mostrar una alerta.</p>
+              <div class="card-badges">
+                <span class="badge badge-eventos">Eventos</span>
+                <span class="badge badge-condicionales">Condicionales</span>
+              </div>
+            </footer>
+          </article>
 
-      <section>
-        <h2>Certificaciones</h2>
-        <ul>
-          <li><strong>AWS Certified Solutions Architect – Associate</strong> Amazon Web Services (AWS)</li>
-        </ul>
+          <article class="challenge-card" id="card-ejercicio-4">
+            <div class="card-header">
+              <span class="medal-icon">🏆</span>
+              <h3 class="card-title">Ejercicio 4 – Calculadora (Reto final)</h3>
+            </div>
+            <div class="device-mockup">
+              <div class="device-speaker"></div>
+              <div class="device-screen calculator-screen">
+                <div class="eval-warning-stamp">¡SIN usar eval!</div>
+                <div class="calc-display-container">
+                  <div class="calc-previous-operand" id="calc-prev-operand"></div>
+                  <div class="calc-current-operand" id="calc-current-operand">0</div>
+                </div>
+                <div class="calc-keypad" id="calc-keypad">
+                  <button type="button" class="calc-btn btn-fn" data-action="clear">C</button>
+                  <button type="button" class="calc-btn btn-fn" data-action="negate">+/-</button>
+                  <button type="button" class="calc-btn btn-fn" data-action="percent">%</button>
+                  <button type="button" class="calc-btn btn-op" data-action="operator" data-op="÷">÷</button>
+
+                  <button type="button" class="calc-btn btn-num" data-num="7">7</button>
+                  <button type="button" class="calc-btn btn-num" data-num="8">8</button>
+                  <button type="button" class="calc-btn btn-num" data-num="9">9</button>
+                  <button type="button" class="calc-btn btn-op" data-action="operator" data-op="×">×</button>
+
+                  <button type="button" class="calc-btn btn-num" data-num="4">4</button>
+                  <button type="button" class="calc-btn btn-num" data-num="5">5</button>
+                  <button type="button" class="calc-btn btn-num" data-num="6">6</button>
+                  <button type="button" class="calc-btn btn-op" data-action="operator" data-op="−">−</button>
+
+                  <button type="button" class="calc-btn btn-num" data-num="1">1</button>
+                  <button type="button" class="calc-btn btn-num" data-num="2">2</button>
+                  <button type="button" class="calc-btn btn-num" data-num="3">3</button>
+                  <button type="button" class="calc-btn btn-op" data-action="operator" data-op="+">+</button>
+
+                  <button type="button" class="calc-btn btn-num btn-zero" data-num="0">0</button>
+                  <button type="button" class="calc-btn btn-num" data-action="decimal">.</button>
+                  <button type="button" class="calc-btn btn-equals" data-action="equals">=</button>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <p class="card-description">Construir una calculadora funcional.</p>
+              <div class="card-badges">
+                <span class="badge badge-arreglos">Arreglos</span>
+                <span class="badge badge-condicionales">Condicionales</span>
+                <span class="badge badge-operadores">Operadores matemáticos manuales</span>
+              </div>
+            </footer>
+          </article>
+        </div>
       </section>
     </main>
+
+    <footer class="app-footer">
+      <p>Arena de Retos DOM • Desarrollado por <strong>Juan Esteban Vallejo</strong> (<a href="mailto:juanvallejo24@gmail.com">juanvallejo24@gmail.com</a>)</p>
+      <p class="footer-note">Repositorio sincronizado y desplegado en Vercel sin dependencias externas.</p>
+    </footer>
   </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
