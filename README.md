@@ -40,6 +40,13 @@ cvv/
 
 ---
 
+## 🌐 Despliegue en Vercel
+
+El sitio web personal y portafolio se encuentra desplegado y accesible en tiempo real a través de Vercel:  
+🔗 **[Ver Sitio Web Personal en Vercel](https://cvv-56jhm4w5e-udem.vercel.app)**
+
+---
+
 ## 👤 Autor
 
 - **Nombre:** Juan Esteban Vallejo
