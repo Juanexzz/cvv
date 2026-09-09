@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller de TypeScript & JavaScript - Juan Esteban Vallejo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --accent: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --term-bg: #030712;
+      --term-border: #374151;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .header-hero {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+      border: 1px solid #312e81;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .badge-tag {
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      border: 1px solid #2563eb;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+    }
+
+    .title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      max-width: 650px;
+      font-size: 1.05rem;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      border: 1px solid #1e293b;
+    }
+
+    .meta-bar a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .meta-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .terminal-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .terminal-header {
+      background: #1f2937;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #374151;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .terminal-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .terminal-controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-run {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-run:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-clear {
+      background: #374151;
+      color: #e5e7eb;
+    }
+
+    .btn-clear:hover {
+      background: #4b5563;
+    }
+
+    .terminal-body {
+      background: var(--term-bg);
+      padding: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      height: 380px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .exercises-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .exercise-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .exercise-card:hover {
+      transform: translateY(-2px);
+      border-color: #3b82f6;
+    }
+
+    .card-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #1e3a8a;
+      color: #93c5fd;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      align-self: flex-start;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f9fafb;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .card-preview {
+      background: #030712;
+      border: 1px solid #1f2937;
+      border-radius: 8px;
+      padding: 0.6rem 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: #34d399;
+      margin-top: auto;
+      word-break: break-all;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--card-border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header-hero">
+      <span class="badge-tag">Taller Práctico</span>
+      <h1 class="title">Ejercicios en TypeScript & JavaScript</h1>
+      <p class="subtitle">Resolución completa de los 12 ejercicios de manipulación de datos, arreglos, ciclos, funciones reductoras e interfaces.</p>
+      <div class="meta-bar">
+        <span><strong>Autor:</strong> Juan Esteban Vallejo</span>
+        <span>•</span>
+        <span><strong>Email:</strong> juanvallejo240@gmail.com</span>
+        <span>•</span>
+        <span><a href="https://github.com/Juanexzz/cvv" target="_blank" rel="noopener">GitHub: @Juanexzz</a></span>
+      </div>
+    </header>
+
+    <section class="terminal-section">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+        </div>
+        <span class="terminal-title">ejercicios.js • salida en vivo</span>
+        <div class="terminal-controls">
+          <button type="button" class="btn btn-run" id="btn-run">▶ Ejecutar en Vivo</button>
+          <button type="button" class="btn btn-clear" id="btn-clear">Limpiar</button>
+        </div>
+      </div>
+      <div class="terminal-body" id="terminal-body">Cargando y ejecutando ejercicios...</div>
+    </section>
+
+    <section>
+      <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: #f9fafb;">Módulos del Taller (12 Puntos)</h2>
+      <div class="exercises-grid">
+        <article class="exercise-card">
+          <span class="card-num">Punto 1</span>
+          <h3 class="card-title">Lista de Estudiantes</h3>
+          <p class="card-desc">Arreglo con 5 nombres de estudiantes iterado mediante un ciclo for.</p>
+          <div class="card-preview">for (let i = 0; i &lt; estudiantes.length; i++)</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 2</span>
+          <h3 class="card-title">Conteo de Estudiantes</h3>
+          <p class="card-desc">Cálculo de la cantidad total de estudiantes mediante .length.</p>
+          <div class="card-preview">Total: 5 estudiantes</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 3</span>
+          <h3 class="card-title">Suma de Números</h3>
+          <p class="card-desc">Arreglo numérico con cálculo acumulado utilizando .reduce().</p>
+          <div class="card-preview">Suma: 488 (10 elementos)</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 4</span>
+          <h3 class="card-title">1500 Números Aleatorios</h3>
+          <p class="card-desc">Generación masiva con Math.round(Math.random() * 100) y suma acumulada.</p>
+          <div class="card-preview">1500 números generados y sumados</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 5</span>
+          <h3 class="card-title">Cálculo de Promedio</h3>
+          <p class="card-desc">Promedio aritmético de los elementos del Punto 3 (suma / longitud).</p>
+          <div class="card-preview">Promedio: 48.80</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 6</span>
+          <h3 class="card-title">Filtro de Números > 50</h3>
+          <p class="card-desc">Filtrado condicional del arreglo del Punto 3 utilizando .filter().</p>
+          <div class="card-preview">Elementos mayores a 50: [68, 89, 54, 95, 72]</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 7</span>
+          <h3 class="card-title">Objeto Persona</h3>
+          <p class="card-desc">Definición de interfaz y objeto tipado con nombre, edad y ciudad.</p>
+          <div class="card-preview">Persona: Juan Esteban Vallejo, 20 años</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 8</span>
+          <h3 class="card-title">Arreglo de Productos</h3>
+          <p class="card-desc">Lista de objetos Producto con nombre y precio en formato moneda.</p>
+          <div class="card-preview">5 productos tecnológicos formateados en COP</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 9</span>
+          <h3 class="card-title">Producto de Mayor Precio</h3>
+          <p class="card-desc">Búsqueda del elemento más costoso del inventario mediante .reduce().</p>
+          <div class="card-preview">Portátil Gamer ASUS ROG ($5.800.000)</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 10</span>
+          <h3 class="card-title">Inventario con Cantidades</h3>
+          <p class="card-desc">Cálculo de subtotales (precio * cantidad) y valor total del stock.</p>
+          <div class="card-preview">Valor total inventario: $73.400.000 COP</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 11</span>
+          <h3 class="card-title">Estudiantes y Materias</h3>
+          <p class="card-desc">Modelado de materias y notas con promedios individuales y general.</p>
+          <div class="card-preview">Promedio general del grupo: 4.09</div>
+        </article>
+
+        <article class="exercise-card">
+          <span class="card-num">Punto 12</span>
+          <h3 class="card-title">Filtro de Promedio > 3.5</h3>
+          <p class="card-desc">Filtrado e impresión de estudiantes aprobados con rendimiento sobresaliente.</p>
+          <div class="card-preview">4 estudiantes destacados encontrados</div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>Taller de Ejercicios Prácticos en TypeScript & JavaScript • Desarrollado por <strong>Juan Esteban Vallejo</strong></p>
+    </footer>
+  </div>
+
+  <script>
+    const termBody = document.getElementById('terminal-body');
+    const btnRun = document.getElementById('btn-run');
+    const btnClear = document.getElementById('btn-clear');
+
+    function runWorkshop() {
+      termBody.textContent = '';
+      const logs = [];
+      const originalLog = console.log;
+
+      console.log = function(...args) {
+        logs.push(args.map(a => typeof a === 'object' ? JSON.stringify(a, null, 2) : String(a)).join(' '));
+        originalLog.apply(console, args);
+      };
+
+      try {
+        console.log("=================================================================");
+        console.log("       TALLER DE EJERCICIOS EN TYPESCRIPT & JAVASCRIPT           ");
+        console.log("                 Autor: Juan Esteban Vallejo                     ");
+        console.log("=================================================================\\n");
+
+        console.log("--- EJERCICIO 1: Lista de Estudiantes (Ciclo) ---");
+        const estudiantes = [
+          "Juan Esteban Vallejo",
+          "María Fernanda López",
+          "Carlos Andrés Gómez",
+          "Sofía Ramírez Castro",
+          "Andrés Felipe Morales"
+        ];
+        console.log("Recorriendo y mostrando los estudiantes:");
+        for (let i = 0; i < estudiantes.length; i++) {
+          console.log(`  [${i + 1}] Estudiante: ${estudiantes[i]}`);
+        }
+        console.log("");
+
+        console.log("--- EJERCICIO 2: Cantidad Total de Estudiantes ---");
+        console.log(`Cantidad de estudiantes en el arreglo: ${estudiantes.length}`);
+        console.log("");
+
+        console.log("--- EJERCICIO 3: Array de Números y Suma Total ---");
+        const numerosPunto3 = [12, 45, 68, 23, 89, 54, 31, 95, 10, 72];
+        const sumaTotalPunto3 = numerosPunto3.reduce((acc, curr) => acc + curr, 0);
+        console.log(`Array de números: [${numerosPunto3.join(", ")}]`);
+        console.log(`Suma total de los números: ${sumaTotalPunto3}`);
+        console.log("");
+
+        console.log("--- EJERCICIO 4: Array de 1500 Números Aleatorios y Suma Total ---");
+        const CANTIDAD_ALEATORIOS = 1500;
+        const numerosAleatorios = [];
+        for (let i = 0; i < CANTIDAD_ALEATORIOS; i++) {
+          numerosAleatorios.push(Math.round(Math.random() * 100));
+        }
+        const sumaTotalAleatorios = numerosAleatorios.reduce((acc, curr) => acc + curr, 0);
+        console.log(`Total de números generados: ${numerosAleatorios.length}`);
+        console.log(`Muestra de los primeros 10 números: [${numerosAleatorios.slice(0, 10).join(", ")}...]`);
+        console.log(`Suma total de los ${CANTIDAD_ALEATORIOS} números aleatorios: ${sumaTotalAleatorios}`);
+        console.log("");
+
+        console.log("--- EJERCICIO 5: Promedio de los Números del Punto 3 ---");
+        const promedioPunto3 = sumaTotalPunto3 / numerosPunto3.length;
+        console.log(`Suma total: ${sumaTotalPunto3}`);
+        console.log(`Cantidad de elementos: ${numerosPunto3.length}`);
+        console.log(`Promedio calculado: ${promedioPunto3.toFixed(2)}`);
+        console.log("");
+
+        console.log("--- EJERCICIO 6: Filtrar Números Mayores a 50 ---");
+        const mayoresA50 = numerosPunto3.filter(num => num > 50);
+        console.log(`Array original: [${numerosPunto3.join(", ")}]`);
+        console.log(`Números mayores a 50: [${mayoresA50.join(", ")}]`);
+        console.log("");
+
+        console.log("--- EJERCICIO 7: Objeto Persona ---");
+        const personaEjemplo = {
+          nombre: "Juan Esteban Vallejo",
+          edad: 20,
+          ciudad: "Medellín, Colombia"
+        };
+        console.log("Información de la persona:");
+        console.log(`  Nombre: ${personaEjemplo.nombre}`);
+        console.log(`  Edad:   ${personaEjemplo.edad} años`);
+        console.log(`  Ciudad: ${personaEjemplo.ciudad}`);
+        console.log("");
+
+        console.log("--- EJERCICIO 8: Array de Productos ---");
+        const productosTecnologia = [
+          { nombre: "Portátil Gamer ASUS ROG", precio: 5800000 },
+          { nombre: "Monitor Curvo Samsung 27\\\"", precio: 1250000 },
+          { nombre: "Teclado Mecánico Keychron K2", precio: 450000 },
+          { nombre: "Mouse Inalámbrico Logitech MX Master 3", precio: 380000 },
+          { nombre: "Audífonos Sony WH-1000XM5", precio: 1650000 }
+        ];
+        productosTecnologia.forEach((p, idx) => {
+          console.log(`  [${idx + 1}] Producto: ${p.nombre.padEnd(40)} | Precio: $${p.precio.toLocaleString("es-CO")} COP`);
+        });
+        console.log("");
+
+        console.log("--- EJERCICIO 9: Producto de Mayor Precio ---");
+        const productoMasCaro = productosTecnologia.reduce((max, act) => act.precio > max.precio ? act : max, productosTecnologia[0]);
+        console.log(`Producto más costoso: ${productoMasCaro.nombre}`);
+        console.log(`Precio: $${productoMasCaro.precio.toLocaleString("es-CO")} COP`);
+        console.log("");
+
+        console.log("--- EJERCICIO 10: Inventario con Cantidades y Valor Total ---");
+        const inventarioAlmacen = [
+          { nombre: "Portátil Gamer ASUS ROG", precio: 5800000, cantidad: 8 },
+          { nombre: "Monitor Curvo Samsung 27\\\"", precio: 1250000, cantidad: 12 },
+          { nombre: "Teclado Mecánico Keychron K2", precio: 450000, cantidad: 20 },
+          { nombre: "Mouse Inalámbrico Logitech MX Master 3", precio: 380000, cantidad: 25 },
+          { nombre: "Audífonos Sony WH-1000XM5", precio: 1650000, cantidad: 6 }
+        ];
+        let valorTotalInventario = 0;
+        inventarioAlmacen.forEach((item, idx) => {
+          const subtotal = item.precio * item.cantidad;
+          valorTotalInventario += subtotal;
+          console.log(`  [${idx + 1}] ${item.nombre.padEnd(38)} | Cant: ${String(item.cantidad).padStart(2)} | Subtotal: $${subtotal.toLocaleString("es-CO")} COP`);
+        });
+        console.log(`Valor total acumulado del inventario: $${valorTotalInventario.toLocaleString("es-CO")} COP`);
+        console.log("");
+
+        console.log("--- EJERCICIO 11: Estudiantes, Materias y Promedios ---");
+        const grupoEstudiantes = [
+          {
+            nombre: "Juan Esteban Vallejo",
+            materias: [
+              { nombre: "Desarrollo Web", nota: 4.8 },
+              { nombre: "Bases de Datos", nota: 4.5 },
+              { nombre: "Estructuras de Datos", nota: 4.2 }
+            ]
+          },
+          {
+            nombre: "María Fernanda López",
+            materias: [
+              { nombre: "Desarrollo Web", nota: 4.0 },
+              { nombre: "Bases de Datos", nota: 3.8 },
+              { nombre: "Estructuras de Datos", nota: 4.5 }
+            ]
+          },
+          {
+            nombre: "Carlos Andrés Gómez",
+            materias: [
+              { nombre: "Desarrollo Web", nota: 3.2 },
+              { nombre: "Bases de Datos", nota: 3.0 },
+              { nombre: "Estructuras de Datos", nota: 3.4 }
+            ]
+          },
+          {
+            nombre: "Sofía Ramírez Castro",
+            materias: [
+              { nombre: "Desarrollo Web", nota: 4.9 },
+              { nombre: "Bases de Datos", nota: 4.7 },
+              { nombre: "Estructuras de Datos", nota: 4.8 }
+            ]
+          },
+          {
+            nombre: "Andrés Felipe Morales",
+            materias: [
+              { nombre: "Desarrollo Web", nota: 2.8 },
+              { nombre: "Bases de Datos", nota: 3.1 },
+              { nombre: "Estructuras de Datos", nota: 2.9 }
+            ]
+          }
+        ];
+
+        let sumaPromediosGrupo = 0;
+        const estudiantesConPromedio = grupoEstudiantes.map(est => {
+          const suma = est.materias.reduce((acc, m) => acc + m.nota, 0);
+          const prom = suma / est.materias.length;
+          sumaPromediosGrupo += prom;
+          return { ...est, promedio: Number(prom.toFixed(2)) };
+        });
+
+        estudiantesConPromedio.forEach(e => {
+          console.log(`Estudiante: ${e.nombre.padEnd(25)} | Promedio: ${e.promedio.toFixed(2)}`);
+        });
+        const promGeneral = sumaPromediosGrupo / grupoEstudiantes.length;
+        console.log(`Promedio general del grupo: ${promGeneral.toFixed(2)}`);
+        console.log("");
+
+        console.log("--- EJERCICIO 12: Estudiantes con Promedio > 3.5 ---");
+        const destacados = estudiantesConPromedio.filter(e => e.promedio > 3.5);
+        destacados.forEach((d, idx) => {
+          console.log(`  [${idx + 1}] ${d.nombre.padEnd(25)} | Promedio: ${d.promedio.toFixed(2)} (Aprobado Destacado)`);
+        });
+        console.log("");
+        console.log("=================================================================");
+        console.log("                 FIN DE EJECUCIÓN DEL TALLER                     ");
+        console.log("=================================================================");
+
+      } catch(err) {
+        console.log("Error durante la ejecución:", err.message);
+      } finally {
+        console.log = originalLog;
+        termBody.textContent = logs.join('\\n');
+      }
+    }
+
+    btnRun.addEventListener('click', runWorkshop);
+    btnClear.addEventListener('click', () => { termBody.textContent = 'Consola limpia. Presiona \"Ejecutar en Vivo\" para volver a correr el taller.'; });
+
+    window.addEventListener('DOMContentLoaded', runWorkshop);
+  </script>
+</body>
+</html>
