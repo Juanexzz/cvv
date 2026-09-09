@@ -1,86 +1,121 @@
-# Proyecto de Desarrollo Web - Juan Esteban Vallejo
+# Repositorio de Proyectos de Desarrollo Web - Juan Esteban Vallejo
 
-Repositorio integral de prácticas y proyectos de desarrollo web frontend, que recopila talleres interactivos de manipulación del Document Object Model (DOM), hojas de vida profesionales con diseño moderno y recursos de presentación.
+Repositorio integral que compila las diferentes actividades, talleres y proyectos prácticos de desarrollo frontend desarrollados por **Juan Esteban Vallejo**.
 
 **Desarrollador:** Juan Esteban Vallejo  
-**Correo:** juanvallejo24@gmail.com  
-**GitHub:** [https://github.com/Juanexzz](https://github.com/Juanexzz)  
-**Despliegue en Vercel:** [https://cvv-udem.vercel.app](https://cvv-udem.vercel.app)  
+**Correo:** juanvallejo240@gmail.com  
+**GitHub:** [@Juanexzz](https://github.com/Juanexzz)  
+**URL Principal de Producción:** [https://cvv-udem.vercel.app](https://cvv-udem.vercel.app)  
 
 ---
 
-## Módulos y Contenido de la Rama `main`
+## 🌐 Módulos y Enlaces Directos en Vercel
 
-La rama principal (`main`) contiene los siguientes componentes y proyectos:
+Cada una de las actividades cuenta con su propio despliegue activo y accesible en tiempo real sin errores:
 
-### 1. Arena de Retos DOM (Página Principal)
-Aplicación web interactiva que reúne soluciones prácticas a cuatro retos de manipulación del Document Object Model en JavaScript vanilla, HTML5 semántico y CSS3 responsivo. La interfaz está inspirada en mockups de dispositivos móviles y dividida en dos categorías:
-
-- **Retos Nivel Básico:**
-  - **🥇 Ejercicio 1 – Cambiar color:** Botón central "Click" que altera dinámicamente el fondo de la pantalla mediante una paleta de colores armónicos, mostrando el código hexadecimal, contador de clics y botón de reinicio.
-  - **🥈 Ejercicio 2 – Lista dinámica:** Entrada de texto y botón interactivo para agregar elementos. Los datos se gestionan en memoria mediante un arreglo en JavaScript (`itemsInMemory`), renderizando tarjetas con borde discontinuo (*dashed border*), eliminación por ítem y vaciado general.
-
-- **Retos Nivel Pro:**
-  - **🥉 Ejercicio 3 – Contador con límite:** Controles circulares de incremento y decremento, pantalla visual de gran formato y condicional que dispara una alerta animada ⚠️ al alcanzar el valor límite de 10.
-  - **🏆 Ejercicio 4 – Calculadora (Reto final):** Calculadora aritmética completa desarrollada estrictamente **sin la función `eval()`**, empleando operadores matemáticos manuales, condicionales, arreglos para historial de operaciones, validación de división por cero, porcentaje, cambio de signo (`+/-`) y soporte para teclado físico.
-
-Archivos asociados: `index.html`, `styles.css`, `app.js`.
+| Actividad / Proyecto | Rama de Origen | Descripción | Enlace Directo en Vercel |
+| :--- | :--- | :--- | :--- |
+| **Arena de Retos DOM** | `feature/retos-dom` | 4 retos interactivos de manipulación del DOM (Cambiar color, Lista dinámica, Contador con límite y Calculadora sin eval). | 🔗 [Ver Retos DOM en Vercel](https://cvv-82yz95q5x-udem.vercel.app) |
+| **Sitio Web Personal & Portafolio** | `feature/sitio-web-personal` | Sitio web personal con HTML5 semántico, CSS3 responsivo, portafolio y formulario de contacto. | 🔗 [Ver Sitio Personal en Vercel](https://cvv-56jhm4w5e-udem.vercel.app) |
+| **Taller de TypeScript & JS** | `feature/ejercicios-ts` | 12 ejercicios prácticos sobre arreglos, objetos, interfaces y tipado estático con dashboard interactivo en vivo. | 🔗 [Ver Taller TS en Vercel](https://cvv-o68vq475h-udem.vercel.app) |
+| **Hoja de Vida Profesional (IA)** | `main` | Currículum digital interactivo con diseño moderno y adaptable. | 🔗 [Ver CV en Vercel](https://cvv-bviu1ooh7-udem.vercel.app/IA/cvv_ia.html) |
 
 ---
 
-### 2. Hoja de Vida y Perfil Profesional
-Versión estructurada de currículum vitae digital, diseñada con estilos CSS limpios y adaptables a dispositivos móviles y de escritorio. Contiene información académica, habilidades técnicas, metas profesionales y datos de contacto.
+## 📖 Descripción de Proyectos
 
-Archivos asociados: `IA/cvv_ia.html`, `perfil.png`.
+### 1. Arena de Retos DOM (Página Principal: `index.html`)
+Aplicación web moderna que implementa en JavaScript vanilla los cuatro retos prácticos ilustrados en mockups de dispositivos móviles:
+
+- **Nivel Básico:**
+  - **🥇 Ejercicio 1 – Cambiar color:** Botón interactivo "Click" que altera dinámicamente el fondo de la pantalla mediante una paleta de colores armónicos con efecto de salpicadura, visualización hexadecimal y contador de clics.
+  - **🥈 Ejercicio 2 – Lista dinámica:** Input y botón para añadir elementos a una lista interactiva. Los datos se almacenan en memoria en un arreglo JavaScript (`itemsInMemory`) y se renderizan con tarjetas de borde discontinuo (*dashed border*), incluyendo eliminación por ítem y vaciado general.
+
+- **Nivel Pro:**
+  - **🥉 Ejercicio 3 – Contador con límite:** Controles circulares de incremento y decremento con pantalla de gran formato y condicional estricto que muestra la alerta ⚠️ (`¡Límite de 10 alcanzado!`) exactamente al llegar a 10.
+  - **🏆 Ejercicio 4 – Calculadora (Reto final):** Calculadora funcional desarrollada **estrictamente sin la función `eval()`**, con operadores matemáticos manuales, condicionales, arreglos para historial de operaciones, protección ante división por cero (`Error: Div 0`), cambio de signo (`+/-`), porcentaje y soporte para teclado físico.
+
+Archivos: `index.html`, `styles.css`, `app.js`.
 
 ---
 
-### 3. Configuración y Despliegue en la Nube
-El repositorio está configurado para integración y entrega continua (CI/CD) mediante Vercel, permitiendo servir todos los recursos de manera estática y con URLs limpias.
+### 2. Sitio Web Personal & Portafolio (`sitio-web-personal/`)
+Sitio web completo desarrollado para el reto de portafolio personal:
+- Estructura HTML5 semántica (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<figure>`, `<aside>`, `<form>`, `<footer>`).
+- Secciones: Inicio, Acerca de, Pasiones & Hobbies, Portafolio de proyectos y Contacto.
+- CSS3 puro sin librerías externas: Grid, Flexbox, variables CSS y diseño adaptable para móviles y escritorio.
 
-Archivos asociados: `vercel.json`.
+Archivos: `sitio-web-personal/index.html`, `sitio-web-personal/styles.css`.
 
 ---
 
-## Estructura de Archivos en `main`
+### 3. Taller Práctico en TypeScript & JavaScript (`taller-ts/` / `ejercicios.ts` / `ejercicios.js`)
+Solución a los 12 puntos de práctica académica sobre manipulación de datos con dashboard visual interactivo:
+1. Ciclo de recorrido de estudiantes.
+2. Conteo de elementos con `.length`.
+3. Suma de arreglos numéricos con `.reduce()`.
+4. Arreglo de 1500 números aleatorios con suma acumulada.
+5. Cálculo de promedio.
+6. Filtro de elementos mayores a 50 (`.filter()`).
+7. Modelado de objeto e interfaz `Persona`.
+8. Arreglo e interfaz `Producto` con formateo de precios.
+9. Detección de producto de mayor precio con `.reduce()`.
+10. Inventario con cálculo de subtotales y valor total.
+11. Gestión académica: estudiantes, materias y cálculo de promedios.
+12. Filtro de estudiantes destacados (promedio > 3.5).
+
+Archivos: `taller-ts/index.html`, `ejercicios.ts`, `ejercicios.js`, `package.json`, `tsconfig.json`.
+
+---
+
+## 🚀 Estructura del Repositorio
 
 ```text
 ├── IA/
-│   └── cvv_ia.html      Hoja de vida interactiva con diseño estructurado
-├── index.html           Aplicación principal con la arena de retos de manipulación del DOM
-├── styles.css           Estilos CSS3 puros con diseño responsivo y mockups móviles
-├── app.js               Lógica en JavaScript vanilla para los retos del DOM (sin comentarios)
-├── perfil.png           Fotografía de perfil utilizada en el CV
-├── vercel.json          Configuración de despliegue estático para Vercel
-└── README.md            Documentación general del repositorio y contenidos de la rama main
+│   └── cvv_ia.html              Hoja de vida digital interactiva
+├── sitio-web-personal/
+│   ├── index.html               Sitio web personal y portafolio
+│   └── styles.css               Estilos CSS3 del sitio personal
+├── taller-ts/
+│   └── index.html               Dashboard interactivo en vivo del taller de TypeScript
+├── index.html                   Arena de retos interactivos del DOM (raíz)
+├── styles.css                   Estilos CSS3 de los retos del DOM
+├── app.js                       Lógica JS vanilla de los retos del DOM (sin comentarios)
+├── ejercicios.ts                Taller de 12 ejercicios en TypeScript
+├── ejercicios.js                Compilación ejecutable en JavaScript
+├── package.json                 Configuración optimizada para Vercel
+├── tsconfig.json                Configuración del compilador de TS
+├── perfil.png                   Fotografía de perfil
+├── vercel.json                  Configuración de despliegue estático para Vercel
+└── README.md                    Documentación general del repositorio
 ```
 
 ---
 
-## Tecnologías Utilizadas
+## 💻 Instrucciones de Ejecución Local
 
-- **HTML5 Semántico:** Estructuración accesible y moderna.
-- **CSS3 Puro:** Variables CSS, Flexbox, CSS Grid, animaciones fluidas y diseño responsivo sin librerías externas.
-- **JavaScript (ES6+):** Manipulación directa del DOM, manejo de eventos, condicionales, estructuras de datos en memoria (arreglos) y operadores aritméticos manuales.
-- **Vercel:** Plataforma de alojamiento y despliegue continuo en la nube.
-
----
-
-## Ejecución en Entorno Local
-
-Para explorar y ejecutar el proyecto localmente:
-
-1. Clonar el repositorio:
+1. **Clonar el repositorio:**
    ```bash
    git clone https://github.com/Juanexzz/cvv.git
    cd cvv
    ```
 
-2. Abrir cualquiera de las aplicaciones en tu navegador preferido:
-   - Para la **Arena de Retos DOM**, abrir `index.html`.
-   - Para la **Hoja de Vida**, abrir `IA/cvv_ia.html`.
+2. **Visualizar las aplicaciones web:**
+   - Para la **Arena de Retos DOM**: abrir `index.html` en el navegador.
+   - Para el **Sitio Web Personal**: abrir `sitio-web-personal/index.html`.
+   - Para el **Dashboard de TypeScript**: abrir `taller-ts/index.html`.
+   - Para la **Hoja de Vida**: abrir `IA/cvv_ia.html`.
 
-3. Alternativamente, levantar un servidor local con Node.js:
+3. **Ejecutar el taller de TypeScript / JavaScript por consola:**
    ```bash
-   npx serve .
+   node ejercicios.js
    ```
+
+---
+
+## 👤 Autor
+
+- **Nombre:** Juan Esteban Vallejo
+- **Correo:** juanvallejo240@gmail.com
+- **LinkedIn:** [Juan Vallejo](https://www.linkedin.com/in/juan-vallejo-a7b177282/)
+- **GitHub:** [@Juanexzz](https://github.com/Juanexzz)

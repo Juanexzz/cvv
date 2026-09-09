@@ -1,0 +1,20 @@
+{
+  "name": "cvv",
+  "version": "1.0.0",
+  "description": "Repositorio integral de proyectos de desarrollo web - Juan Esteban Vallejo",
+  "main": "ejercicios.js",
+  "scripts": {
+    "start": "node ejercicios.js",
+    "compile": "tsc",
+    "dev": "ts-node ejercicios.ts"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "dom",
+    "html",
+    "css"
+  ],
+  "author": "Juan Esteban Vallejo <juanvallejo240@gmail.com>",
+  "license": "MIT"
+}
