@@ -1,79 +1,74 @@
-# Arena de Retos DOM
+# Proyecto de Desarrollo Web - Juan Esteban Vallejo
 
-Solución completa del taller interactivo de manipulación del DOM (Document Object Model) con JavaScript vainilla, HTML5 semántico y estilos CSS3 modernos con diseño responsivo y mockups de dispositivos móviles.
+Repositorio integral de prácticas y proyectos de desarrollo web frontend, que recopila talleres interactivos de manipulación del Document Object Model (DOM), hojas de vida profesionales con diseño moderno y recursos de presentación.
 
 **Desarrollador:** Juan Esteban Vallejo  
 **Correo:** juanvallejo24@gmail.com  
-**Repositorio:** [https://github.com/Juanexzz/cvv](https://github.com/Juanexzz/cvv)  
+**GitHub:** [https://github.com/Juanexzz](https://github.com/Juanexzz)  
+**Despliegue en Vercel:** [https://cvv-udem.vercel.app](https://cvv-udem.vercel.app)  
 
 ---
 
-## Retos Implementados
+## Módulos y Contenido de la Rama `main`
 
-### 1. A la arena: Retos nivel básico
+La rama principal (`main`) contiene los siguientes componentes y proyectos:
 
-#### 🥇 Ejercicio 1 – Cambiar color
-- **Objetivo:** Crear un botón que cambie el color del fondo al hacer clic.
-- **Implementación:**
-  - Mockup interactivo de teléfono móvil con botón central estilizado.
-  - Paleta de colores armónicos y vibrantes seleccionados dinámicamente.
-  - Generación de salpicaduras de color visuales con transiciones suaves en CSS.
-  - Indicador del código hexadecimal del color en pantalla y contador de clics.
-  - Botón de reinicio al color base.
+### 1. Arena de Retos DOM (Página Principal)
+Aplicación web interactiva que reúne soluciones prácticas a cuatro retos de manipulación del Document Object Model en JavaScript vanilla, HTML5 semántico y CSS3 responsivo. La interfaz está inspirada en mockups de dispositivos móviles y dividida en dos categorías:
 
-#### 🥈 Ejercicio 2 – Lista dinámica
-- **Objetivo:** Mostrar elementos en una lista interactiva. Usar un arreglo para guardar los datos de los inputs en memoria.
-- **Implementación:**
-  - Formulario con input de texto y botón interactivo "Agregar" (con soporte para tecla Enter).
-  - Almacenamiento en memoria en un arreglo JavaScript (`itemsInMemory`).
-  - Renderizado dinámico de tarjetas con borde punteado (dashed border) idénticas a la ilustración.
-  - Cada elemento cuenta con botón individual para eliminar del arreglo y del DOM.
-  - Contador de elementos en memoria y opción de vaciado completo.
+- **Retos Nivel Básico:**
+  - **🥇 Ejercicio 1 – Cambiar color:** Botón central "Click" que altera dinámicamente el fondo de la pantalla mediante una paleta de colores armónicos, mostrando el código hexadecimal, contador de clics y botón de reinicio.
+  - **🥈 Ejercicio 2 – Lista dinámica:** Entrada de texto y botón interactivo para agregar elementos. Los datos se gestionan en memoria mediante un arreglo en JavaScript (`itemsInMemory`), renderizando tarjetas con borde discontinuo (*dashed border*), eliminación por ítem y vaciado general.
+
+- **Retos Nivel Pro:**
+  - **🥉 Ejercicio 3 – Contador con límite:** Controles circulares de incremento y decremento, pantalla visual de gran formato y condicional que dispara una alerta animada ⚠️ al alcanzar el valor límite de 10.
+  - **🏆 Ejercicio 4 – Calculadora (Reto final):** Calculadora aritmética completa desarrollada estrictamente **sin la función `eval()`**, empleando operadores matemáticos manuales, condicionales, arreglos para historial de operaciones, validación de división por cero, porcentaje, cambio de signo (`+/-`) y soporte para teclado físico.
+
+Archivos asociados: `index.html`, `styles.css`, `app.js`.
 
 ---
 
-### 2. A la arena: Retos nivel pro
+### 2. Hoja de Vida y Perfil Profesional
+Versión estructurada de currículum vitae digital, diseñada con estilos CSS limpios y adaptables a dispositivos móviles y de escritorio. Contiene información académica, habilidades técnicas, metas profesionales y datos de contacto.
 
-#### 🥉 Ejercicio 3 – Contador con límite
-- **Objetivo:** Si el contador llega a 10, mostrar una alerta.
-- **Conceptos aplicados:** `[Eventos]`, `[Condicionales]`
-- **Implementación:**
-  - Botones circulares para decrementar (`-`) e incrementar (`+`).
-  - Visualizador de número de gran tamaño con bordes estilizados.
-  - Condicional estricto que evalúa cuando el valor es igual a 10.
-  - Notificación visual con ícono de advertencia ⚠️ animada en la parte superior.
-  - Botón para restablecer el contador a 0.
-
-#### 🏆 Ejercicio 4 – Calculadora (Reto final)
-- **Objetivo:** Construir una calculadora funcional ¡SIN usar eval!
-- **Conceptos aplicados:** `[Arreglos]`, `[Condicionales]`, `[Operadores matemáticos manuales]`
-- **Implementación:**
-  - Motor de cálculo aritmético 100% manual (`+`, `-`, `*`, `/`, `%`).
-  - Cero uso de `eval()` ni `new Function()`.
-  - Protección contra división por cero (`Error: Div 0`).
-  - Control de precisión flotante para evitar errores comunes de redondeo en JavaScript.
-  - Inversión de signo positivo/negativo (`+/-`) y cálculo porcentual (`%`).
-  - Arreglo de registro de operaciones (`calculatorHistoryLog`).
-  - Distribución tipo teclado numérico en cuadrícula CSS (Grid).
-  - Soporte completo para entrada desde teclado físico (números, operadores, Enter, Escape, Backspace).
+Archivos asociados: `IA/cvv_ia.html`, `perfil.png`.
 
 ---
 
-## Estructura del Proyecto
+### 3. Configuración y Despliegue en la Nube
+El repositorio está configurado para integración y entrega continua (CI/CD) mediante Vercel, permitiendo servir todos los recursos de manera estática y con URLs limpias.
+
+Archivos asociados: `vercel.json`.
+
+---
+
+## Estructura de Archivos en `main`
 
 ```text
-├── index.html        Página principal con la arena de retos y mockups móviles
-├── styles.css        Estilos CSS3 puros, variables y adaptabilidad responsiva
-├── app.js            Lógica en JavaScript vanilla de los 4 retos (sin comentarios)
-├── vercel.json       Configuración para despliegue estático optimizado en Vercel
-└── README.md         Documentación del proyecto
+├── IA/
+│   └── cvv_ia.html      Hoja de vida interactiva con diseño estructurado
+├── index.html           Aplicación principal con la arena de retos de manipulación del DOM
+├── styles.css           Estilos CSS3 puros con diseño responsivo y mockups móviles
+├── app.js               Lógica en JavaScript vanilla para los retos del DOM (sin comentarios)
+├── perfil.png           Fotografía de perfil utilizada en el CV
+├── vercel.json          Configuración de despliegue estático para Vercel
+└── README.md            Documentación general del repositorio y contenidos de la rama main
 ```
 
 ---
 
-## Ejecución Local
+## Tecnologías Utilizadas
 
-Para visualizar el proyecto localmente:
+- **HTML5 Semántico:** Estructuración accesible y moderna.
+- **CSS3 Puro:** Variables CSS, Flexbox, CSS Grid, animaciones fluidas y diseño responsivo sin librerías externas.
+- **JavaScript (ES6+):** Manipulación directa del DOM, manejo de eventos, condicionales, estructuras de datos en memoria (arreglos) y operadores aritméticos manuales.
+- **Vercel:** Plataforma de alojamiento y despliegue continuo en la nube.
+
+---
+
+## Ejecución en Entorno Local
+
+Para explorar y ejecutar el proyecto localmente:
 
 1. Clonar el repositorio:
    ```bash
@@ -81,16 +76,11 @@ Para visualizar el proyecto localmente:
    cd cvv
    ```
 
-2. Abrir directamente `index.html` en cualquier navegador web moderno:
-   - Doble clic en `index.html`, o
-   - Usar una extensión como Live Server en VS Code / PyCharm, o
-   - Ejecutar un servidor local simple:
-     ```bash
-     npx serve .
-     ```
+2. Abrir cualquiera de las aplicaciones en tu navegador preferido:
+   - Para la **Arena de Retos DOM**, abrir `index.html`.
+   - Para la **Hoja de Vida**, abrir `IA/cvv_ia.html`.
 
----
-
-## Despliegue en Vercel
-
-El proyecto está configurado para despliegue estático continuo en Vercel. Cada actualización en la rama principal desencadena una compilación automática servida en la nube con rendimiento óptimo.
+3. Alternativamente, levantar un servidor local con Node.js:
+   ```bash
+   npx serve .
+   ```
