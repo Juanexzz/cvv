@@ -1,113 +1,96 @@
-# Hoja de Vida - HTML + CSS
+# Arena de Retos DOM
 
-Proyecto de práctica para aprender desarrollo web: una hoja de vida construida con HTML básico y CSS básico, sin frameworks ni librerías externas, todo en un solo archivo (`hoja-de-vida.html`).
+Solución completa del taller interactivo de manipulación del DOM (Document Object Model) con JavaScript vainilla, HTML5 semántico y estilos CSS3 modernos con diseño responsivo y mockups de dispositivos móviles.
 
-## Estructura del CV
+**Desarrollador:** Juan Esteban Vallejo  
+**Correo:** juanvallejo24@gmail.com  
+**Repositorio:** [https://github.com/Juanexzz/cvv](https://github.com/Juanexzz/cvv)  
 
-- Foto de perfil
-- Perfil
-- Experiencia Laboral
-- Educación
-- Certificaciones
-- Contacto (correo, celular)
-- Redes Sociales
+---
 
-## Cómo usarlo
+## Retos Implementados
 
-1. Guarda una foto tuya en la misma carpeta que `hoja-de-vida.html` con el nombre `foto.jpg` (o cambia el atributo `src` del `<img>` por el nombre real de tu archivo).
-2. Abre `hoja-de-vida.html` directamente en el navegador, no necesita servidor ni instalación.
+### 1. A la arena: Retos nivel básico
 
-## Resumen de aprendizaje
+#### 🥇 Ejercicio 1 – Cambiar color
+- **Objetivo:** Crear un botón que cambie el color del fondo al hacer clic.
+- **Implementación:**
+  - Mockup interactivo de teléfono móvil con botón central estilizado.
+  - Paleta de colores armónicos y vibrantes seleccionados dinámicamente.
+  - Generación de salpicaduras de color visuales con transiciones suaves en CSS.
+  - Indicador del código hexadecimal del color en pantalla y contador de clics.
+  - Botón de reinicio al color base.
 
-Análisis de lo que se usó al construir este CV, para repasar qué hace cada cosa.
+#### 🥈 Ejercicio 2 – Lista dinámica
+- **Objetivo:** Mostrar elementos en una lista interactiva. Usar un arreglo para guardar los datos de los inputs en memoria.
+- **Implementación:**
+  - Formulario con input de texto y botón interactivo "Agregar" (con soporte para tecla Enter).
+  - Almacenamiento en memoria en un arreglo JavaScript (`itemsInMemory`).
+  - Renderizado dinámico de tarjetas con borde punteado (dashed border) idénticas a la ilustración.
+  - Cada elemento cuenta con botón individual para eliminar del arreglo y del DOM.
+  - Contador de elementos en memoria y opción de vaciado completo.
 
-### Etiquetas HTML
+---
 
-| Etiqueta | Para qué sirve |
-|---|---|
-| `<!DOCTYPE html>` | Le dice al navegador que el documento usa HTML5 |
-| `<html>` | Elemento raíz que envuelve toda la página |
-| `<head>` | Metadatos: no se ve en pantalla, pero configura la página (título, charset, estilos) |
-| `<meta>` | Información sobre el documento (codificación de caracteres, comportamiento en móviles) |
-| `<title>` | Texto que aparece en la pestaña del navegador |
-| `<style>` | Contiene el CSS directamente dentro del HTML |
-| `<body>` | Todo el contenido visible de la página |
-| `<header>` | Sección introductoria (aquí: foto + nombre) |
-| `<main>` | Contenido principal del documento |
-| `<section>` | Agrupa un bloque temático (Perfil, Educación, etc.) |
-| `<div>` | Contenedor genérico, solo para agrupar y aplicar estilos |
-| `<h1>` / `<h2>` | Títulos, `h1` es el más importante (el nombre), `h2` para cada sección |
-| `<p>` | Párrafo de texto |
-| `<img>` | Inserta una imagen |
-| `<ul>` / `<li>` | Lista sin viñetas visibles (se quitaron con CSS) y cada uno de sus elementos |
-| `<a>` | Enlace (correo, teléfono, GitHub) |
-| `<span>` | Contenedor de texto en línea, para darle estilo a una palabra sin romper el flujo |
+### 2. A la arena: Retos nivel pro
 
-### Atributos
+#### 🥉 Ejercicio 3 – Contador con límite
+- **Objetivo:** Si el contador llega a 10, mostrar una alerta.
+- **Conceptos aplicados:** `[Eventos]`, `[Condicionales]`
+- **Implementación:**
+  - Botones circulares para decrementar (`-`) e incrementar (`+`).
+  - Visualizador de número de gran tamaño con bordes estilizados.
+  - Condicional estricto que evalúa cuando el valor es igual a 10.
+  - Notificación visual con ícono de advertencia ⚠️ animada en la parte superior.
+  - Botón para restablecer el contador a 0.
 
-| Atributo | Para qué sirve |
-|---|---|
-| `lang="es"` | Indica el idioma del documento (accesibilidad y SEO) |
-| `charset="UTF-8"` | Habilita tildes, ñ y demás caracteres especiales |
-| `name` / `content` (en `<meta>`) | Configuran el viewport para que la página se vea bien en celulares |
-| `class` | Asigna un nombre para referenciar el elemento desde el CSS |
-| `src` | Ruta del archivo de imagen a mostrar |
-| `alt` | Texto alternativo de la imagen (accesibilidad, y se muestra si la imagen no carga) |
-| `href` | Destino de un enlace (URL, `mailto:`, `tel:`) |
-| `target="_blank"` | Abre el enlace en una pestaña nueva |
-| `rel="noopener"` | Seguridad al usar `target="_blank"`, evita que la nueva pestaña acceda a la página original |
+#### 🏆 Ejercicio 4 – Calculadora (Reto final)
+- **Objetivo:** Construir una calculadora funcional ¡SIN usar eval!
+- **Conceptos aplicados:** `[Arreglos]`, `[Condicionales]`, `[Operadores matemáticos manuales]`
+- **Implementación:**
+  - Motor de cálculo aritmético 100% manual (`+`, `-`, `*`, `/`, `%`).
+  - Cero uso de `eval()` ni `new Function()`.
+  - Protección contra división por cero (`Error: Div 0`).
+  - Control de precisión flotante para evitar errores comunes de redondeo en JavaScript.
+  - Inversión de signo positivo/negativo (`+/-`) y cálculo porcentual (`%`).
+  - Arreglo de registro de operaciones (`calculatorHistoryLog`).
+  - Distribución tipo teclado numérico en cuadrícula CSS (Grid).
+  - Soporte completo para entrada desde teclado físico (números, operadores, Enter, Escape, Backspace).
 
-### CSS
+---
 
-**Variables (`:root { --nombre: valor; }`)**
-Guardan valores reutilizables (colores, tipografías). Se usan luego con `var(--nombre)`. Cambiar un color en un solo lugar lo actualiza en toda la página.
+## Estructura del Proyecto
 
-**Reset básico**
-
-```css
-* { box-sizing: border-box; margin: 0; padding: 0; }
+```text
+├── index.html        Página principal con la arena de retos y mockups móviles
+├── styles.css        Estilos CSS3 puros, variables y adaptabilidad responsiva
+├── app.js            Lógica en JavaScript vanilla de los 4 retos (sin comentarios)
+├── vercel.json       Configuración para despliegue estático optimizado en Vercel
+└── README.md         Documentación del proyecto
 ```
 
-`box-sizing: border-box` hace que el padding y el borde se cuenten dentro del ancho del elemento, no se lo sumen. `margin/padding: 0` quita los espacios por defecto que trae cada navegador.
+---
 
-**Modelo de caja**
+## Ejecución Local
 
-- `padding`: espacio interno entre el borde de un elemento y su contenido.
-- `margin`: espacio externo entre un elemento y los demás.
-- `border`: línea alrededor del elemento.
-- `border-radius`: redondea las esquinas (usado para la foto circular).
+Para visualizar el proyecto localmente:
 
-**Flexbox (`display: flex`)**
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/Juanexzz/cvv.git
+   cd cvv
+   ```
 
-Distribuye elementos en fila o columna de forma flexible. Usado en el `<header>` para poner la foto y el texto uno junto al otro.
+2. Abrir directamente `index.html` en cualquier navegador web moderno:
+   - Doble clic en `index.html`, o
+   - Usar una extensión como Live Server en VS Code / PyCharm, o
+   - Ejecutar un servidor local simple:
+     ```bash
+     npx serve .
+     ```
 
-- `align-items: center`: centra verticalmente.
-- `gap`: espacio entre elementos hijos.
+---
 
-**Grid (`display: grid`)**
+## Despliegue en Vercel
 
-Distribuye elementos en una cuadrícula. Usado en la sección de Contacto/Redes para poner dos columnas iguales (`grid-template-columns: 1fr 1fr`).
-
-**Tipografía**
-
-- `font-family`: qué fuente usar (con alternativas por si el sistema no tiene la primera).
-- `font-size`, `font-weight`: tamaño y grosor del texto.
-- `line-height`: espacio entre líneas de texto.
-- `letter-spacing`: espacio entre letras.
-
-**Colores**
-
-- `color`: color del texto.
-- `background`: color de fondo.
-
-**Pseudo-clases**
-
-- `a:hover`, `a:focus`: aplican estilo cuando el mouse pasa sobre el enlace o cuando se selecciona con el teclado.
-- `:last-child`: selecciona el último elemento de un grupo (usado para quitar el margen inferior sobrante).
-
-**Media queries (`@media`)**
-
-Aplican reglas de CSS solo bajo ciertas condiciones.
-
-- `@media (max-width: 560px)`: en pantallas angostas (celular), apila la foto y el texto en columna, y pasa las dos columnas de contacto a una sola.
-- `@media print`: al imprimir o exportar a PDF, quita el fondo y el borde para que se vea limpio en papel.
+El proyecto está configurado para despliegue estático continuo en Vercel. Cada actualización en la rama principal desencadena una compilación automática servida en la nube con rendimiento óptimo.
